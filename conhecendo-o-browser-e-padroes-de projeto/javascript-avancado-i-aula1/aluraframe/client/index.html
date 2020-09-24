@@ -11,7 +11,7 @@
     
     <h1 class="text-center">Negociações</h1>
     
-    <form class="form">
+    <form class="form" onsubmit="negociacaoController.adiciona(event)">
         
         <div class="form-group">
             <label for="data">Data</label>
@@ -59,23 +59,9 @@
         </tfoot>
     </table>
     <script src="../client/js/app/models/Negociacao.js"></script>
+    <script src="../client/js/app/controlles/NegociacaoController.js"></script>
     <script>
-
-        var hoje = new Date();
-        var n1 = new Negociacao(hoje, 5, 700);
-
-        console.log(n1.data);
-
-        n1.data.setDate(11);
-        console.log(n1.data);
-       // n1.quantidade = 1000; // sem o _ não vai aparecer
-      // Object.freeze(n1); // congela o n1 e mesmo com o _ altera
-       // n1._quantidade = 1000 // não vai alterar por conta do freeze()
-        // console.log(n1.quantidade);
-        // console.log(n1.data);
-        // console.log(n1.valor);
-        // console.log(n1.volume);
-
+        let negociacaoController = new NegociacaoController();
     </script>
 </body>
 </html>
